@@ -1,0 +1,20 @@
+<button id="example-widget-trigger" type="button">Buy Tickets</button>
+
+<script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
+
+<script type="text/javascript">
+  // This Function is not Tested
+  var exampleCallback = function() {
+    console.log("Order complete!");
+    var orderid = document.getElementsByTagName('p')[2].innerText;
+    console.log(orderid);
+  };
+
+  window.EBWidgets.createWidget({
+    widgetType: "checkout",
+    eventId: "108154466922", // EventID Goes Here
+    modal: true,
+    modalTriggerElementId: "example-widget-trigger",
+    onOrderComplete: exampleCallback
+  });
+</script>
